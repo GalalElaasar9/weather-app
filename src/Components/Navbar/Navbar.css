@@ -1,0 +1,36 @@
+.navbar{
+  padding: 50px 0 !important;
+  background: #1e202b;
+  .nav-brand{
+    gap: 20px;
+    .name-site{
+      h5{
+        color: #fff !important;
+        margin: 0;
+      }
+      small{
+        color: #fff !important;
+      }
+    }
+  }
+  .navbar-nav{
+    gap: 30px;
+    .nav-item{
+      .nav-link{
+        color: #fff;
+        padding: 2px 15px;
+        border-radius: 20px;
+        border: 2px solid transparent;
+        transition: 0.5s all ease-in-out;
+        &.active{
+          color: #009ad8;
+          border: 2px solid #009ad8;
+        }
+        &:hover{
+          border: 2px solid #009ad8;
+          color: #009ad8;
+        }
+      }
+    }
+  }
+}
