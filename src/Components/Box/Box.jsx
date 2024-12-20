@@ -1,16 +1,17 @@
-import { useContext } from "react"
-import { ApiContext } from "../../Context/ApiContext"
+import moment from "moment";
 
-function Box({data , key}) {
-  const {location , weather , iconWeather , tmbcWeather , search} = useContext(ApiContext)
+function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , search}) { 
+  const date = data.date;
+  const formattedDate = moment(date).format("D MMM")
+  const day = moment(date).format('dddd');
   return (
-  <div className="box" style={{ minHeight:'354.29px' }} key={key}>
+  <div className="box" style={{ minHeight:'354.29px' }} key={dataKey}>
     <div className="head">
       <div className="day">
-        <span>Friday</span>
+        <span>{day}</span>
       </div>
       <div className="date">
-        <span>{data.date}</span>
+        <span>{formattedDate}</span>
       </div>
     </div>
     <div className="content">
@@ -31,12 +32,16 @@ function Box({data , key}) {
 
 export default Box
 
-export function Box2({data , key}) {
+
+export function Box2({data , dataKey}) {
+  // const {getSearchWeather} = useContext(ApiContext) ;
+  const date = data.date;
+  const formattedDate = moment(date).format("dddd");
   return (
-  <div className="box" key={key} style={{ minHeight:'354.29px' }}>
+  <div className="box" key={dataKey} style={{ minHeight:'354.29px' }}>
     <div className="head" style={{ justifyContent:"center" }}>
       <div className="day" >
-        <span>{data.date}</span>
+        <span>{formattedDate}</span>
       </div>
     </div>
     <div className="content">
