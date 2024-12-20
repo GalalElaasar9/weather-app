@@ -28,15 +28,15 @@ function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , 
 
       <div className="d-flex mt-3 gap-3">
         <span style={{display:'flex' , alignItems:'center' , gap:'5px'}}>
-          <img src="../../../public/icon-umberella@2x.png" width={'20px'}  />
+          <img src="https://i.postimg.cc/Dywdgbj8/icon-umberella-2x.png" width={'20px'}  />
           <span id="humidity">{humidity}%</span>
         </span>
         <span style={{display:'flex' , alignItems:'center' , gap:'5px'}}>
-          <img src="../../../public/icon-wind@2x.png" width={'20px'}  />
+          <img src="https://i.postimg.cc/4xKvCRTG/icon-wind-2x.png" width={'20px'}  />
           <span id="wind">{wind} m/h</span>
         </span>
         <span style={{display:'flex' , alignItems:'center' , gap:'5px'}}>
-          <img src="../../../public/icon-compass@2x.png" width={'20px'}  />
+          <img src="https://i.postimg.cc/QxYgnxwS/icon-compass-2x.png" width={'20px'}  />
           <span id="windDirection">{windDir}</span>
         </span>
 
