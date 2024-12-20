@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export const ApiContext = createContext();
 function ApiContextProvider({ children }) {
   const [search , setSearch] = useState('')
-  const [location, setLocation] = useState("london");
+  const [location, setLocation] = useState("Cairo");
   const [weather, setWeather] = useState("");
   const [iconWeather, setIconWeather] = useState("");
   const [tmbcWeather, setTmbcWeather] = useState("");
@@ -17,6 +17,8 @@ function ApiContextProvider({ children }) {
       const { data } = await axios.get(
         `https://api.weatherapi.com/v1/current.json?key=${ApiKey}&q=${search}`
       );
+      console.log(data);
+      
       if (search.length >= 2 && data?.location?.name.toLowerCase().includes(search.toLowerCase())) {
           setLocation(data?.location?.name);
           setWeather(data?.current?.condition?.text);
@@ -28,7 +30,7 @@ function ApiContextProvider({ children }) {
     } catch (e) {
       toast.error(
         e.response?.data?.error?.message || 
-        "An error occurred. Please check the city name and try again."
+        "An error occurred. Please check the network and try again."
       );
     }
   }

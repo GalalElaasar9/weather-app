@@ -35,8 +35,11 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    overflow-x: scroll;
     .box{
-      flex: 1;
+      /* max-width: calc(1150px/3); */
+      /* width: 100%; */
+      flex: 0 0 calc(1150px/3);
       /* padding: 10px; */
       .head{
         display: flex;
