@@ -1,6 +1,6 @@
 import moment from "moment";
 
-function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , search}) { 
+function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , humidity , wind , windDir}) { 
   const date = data.date;
   const formattedDate = moment(date).format("D MMM")
   const day = moment(date).format('dddd');
@@ -25,6 +25,22 @@ function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , 
       <div className="custom">
         <span>{weather}</span>
       </div>
+
+      <div className="d-flex mt-3 gap-3">
+        <span style={{display:'flex' , alignItems:'center' , gap:'5px'}}>
+          <img src="../../../public/icon-umberella@2x.png" width={'20px'}  />
+          <span id="humidity">{humidity}%</span>
+        </span>
+        <span style={{display:'flex' , alignItems:'center' , gap:'5px'}}>
+          <img src="../../../public/icon-wind@2x.png" width={'20px'}  />
+          <span id="wind">{wind} m/h</span>
+        </span>
+        <span style={{display:'flex' , alignItems:'center' , gap:'5px'}}>
+          <img src="../../../public/icon-compass@2x.png" width={'20px'}  />
+          <span id="windDirection">{windDir}</span>
+        </span>
+
+      </div>
     </div>
   </div>
   )
@@ -38,7 +54,7 @@ export function Box2({data , dataKey}) {
   const date = data.date;
   const formattedDate = moment(date).format("dddd");
   return (
-  <div className="box" key={dataKey} style={{ minHeight:'354.29px' }}>
+  <div className="box" key={dataKey} style={{ minHeight:'394.29px' }}>
     <div className="head" style={{ justifyContent:"center" }}>
       <div className="day" >
         <span>{formattedDate}</span>

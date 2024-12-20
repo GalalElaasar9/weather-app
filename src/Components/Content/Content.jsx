@@ -4,7 +4,7 @@ import { ApiContext } from "../../Context/ApiContext";
 import { Triangle } from "react-loader-spinner";
 
 function Content() {
-  const { forecast, location, weather, iconWeather, tmbcWeather, search } =
+  const { forecast, location, weather, iconWeather, tmbcWeather, search , humidity , wind , windDir} =
     useContext(ApiContext);
   if (forecast === null) {
     return (
@@ -46,6 +46,9 @@ function Content() {
               iconWeather={iconWeather}
               tmbcWeather={tmbcWeather}
               search={search}
+              humidity={humidity}
+              wind={wind}
+              windDir={windDir}
             />
           );
         } else {

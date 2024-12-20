@@ -10,6 +10,9 @@ function ApiContextProvider({ children }) {
   const [weather, setWeather] = useState("");
   const [iconWeather, setIconWeather] = useState("");
   const [tmbcWeather, setTmbcWeather] = useState("");
+  const [humidity, setHumidity] = useState("");
+  const [wind, setWind] = useState("");
+  const [windDir, setWindDir] = useState("");
   
   const [forecast , setForecast] = useState(null)
   async function getWeather(search) {
@@ -24,6 +27,9 @@ function ApiContextProvider({ children }) {
           setWeather(data?.current?.condition?.text);
           setIconWeather(data?.current?.condition?.icon);
           setTmbcWeather(data?.current?.temp_c);
+          setHumidity(data?.current?.humidity);
+          setWind(data?.current?.wind_mph);
+          setWindDir(data?.current?.wind_dir);
           // toast.success(`Weather data for ${data.location.name} loaded successfully!`);
           return data;
         }
@@ -67,6 +73,9 @@ function ApiContextProvider({ children }) {
         forecast,
         setSearch,
         search,
+        humidity,
+        wind,
+        windDir
       }}
     >
       {children}

@@ -37,10 +37,7 @@
     align-items: center;
     overflow-x: scroll;
     .box{
-      /* max-width: calc(1150px/3); */
-      /* width: 100%; */
       flex: 0 0 calc(1150px/3);
-      /* padding: 10px; */
       .head{
         display: flex;
         justify-content: space-between;
@@ -77,6 +74,36 @@
           }
         }
       }
+    }
+  }
+}
+
+
+@media (max-width:767px) {
+  form , .forecast{
+    margin: 0 10px !important;
+    input{
+      width: 80% !important;
+    }
+    button{
+      width: 18.5% !important;
+    }
+  }
+
+  .credit{
+    font-size: 18px !important;
+  }
+
+}
+
+@media (max-width:991px) {
+  form , .forecast{
+    margin: 0 10px !important;
+    input{
+      width: 80% !important;
+    }
+    button{
+      width: 18.5% !important;
     }
   }
 }
