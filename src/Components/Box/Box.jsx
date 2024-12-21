@@ -1,9 +1,23 @@
 import moment from "moment";
+import { useContext } from "react";
+import { useEffect } from "react";
+import { ApiContext } from "../../Context/ApiContext";
 
 function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , humidity , wind , windDir}) { 
+  const {setLocation} = useContext(ApiContext)
   const date = data.date;
   const formattedDate = moment(date).format("D MMMM")
   const day = moment(date).format('dddd');
+  // localStorage.setItem('location',location)
+  // useEffect(() => {
+  //   localStorage.setItem('location', location);
+  // }, [location]);
+  // useEffect(()=>{
+  //   const local = localStorage.getItem('location');
+  //   if(local) setLocation(local)
+  // },[])
+
+
   return (
   <div className="box" style={{ minHeight:'354.29px' }} key={dataKey}>
     <div className="head">

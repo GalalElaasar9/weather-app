@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export const ApiContext = createContext();
 function ApiContextProvider({ children }) {
   const [search , setSearch] = useState('')
-  const [location, setLocation] = useState("Cairo");
+  const [location, setLocation] = useState(()=> { return localStorage.getItem('location') || 'Cairo'})
   const [weather, setWeather] = useState("");
   const [iconWeather, setIconWeather] = useState("");
   const [tmbcWeather, setTmbcWeather] = useState("");
@@ -42,6 +42,7 @@ function ApiContextProvider({ children }) {
   }
 
   useEffect(()=>{
+    localStorage.setItem('location',location);
     getWeather(location)
     getSearchWeather(location)
   },[location])
@@ -66,6 +67,7 @@ function ApiContextProvider({ children }) {
       value={{
         getWeather,
         location,
+        setLocation,
         weather,
         iconWeather,
         tmbcWeather,
