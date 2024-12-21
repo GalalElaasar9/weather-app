@@ -20,7 +20,7 @@ function ApiContextProvider({ children }) {
       const { data } = await axios.get(
         `https://api.weatherapi.com/v1/current.json?key=${ApiKey}&q=${search}`
       );
-      console.log(data);
+      // console.log(data);
       
       if (search.length >= 2 && data?.location?.name.toLowerCase().includes(search.toLowerCase())) {
           setLocation(data?.location?.name);
@@ -52,7 +52,7 @@ function ApiContextProvider({ children }) {
         `https://api.weatherapi.com/v1/forecast.json?key=${ApiKey}&q=${search}&days=3`
       );
       if (search.length >= 2 && data?.location?.name.toLowerCase().includes(search.toLowerCase())) {
-          console.log(data?.forecast?.forecastday);
+          // console.log(data?.forecast?.forecastday);
           setForecast(data?.forecast?.forecastday);
           return data;
       }

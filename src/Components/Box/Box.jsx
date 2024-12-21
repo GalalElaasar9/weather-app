@@ -2,7 +2,7 @@ import moment from "moment";
 
 function Box({data , dataKey , location , weather , iconWeather , tmbcWeather , humidity , wind , windDir}) { 
   const date = data.date;
-  const formattedDate = moment(date).format("D MMM")
+  const formattedDate = moment(date).format("D MMMM")
   const day = moment(date).format('dddd');
   return (
   <div className="box" style={{ minHeight:'354.29px' }} key={dataKey}>
